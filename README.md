@@ -4,7 +4,7 @@ Recursion is similar to a loop: a procedure is run over and over again until it 
 
 ## Example of Never-Ending Recursion
 
-```
+```rb
 def talk_to_myself(n)
   talk_to_myself(n)
 end
@@ -16,7 +16,7 @@ In the above code, the method `talk_to_myself` is recursive because it calls its
 
 The base case (or cases) tells the recursive method when to stop running. It is often an if statement, though it doesn’t have to be (it depends on the method and what it needs to do).
 
-```
+```rb
 def talk_to_myself(n)
   return if n <= 0.5
 
@@ -34,7 +34,7 @@ When we run a while loop where the terminating condition is never reached, we ge
 
 With recursive methods, the last recursive call will complete its execution first. Once that completes, the second to last recursive call will complete, and so on until only the first call to the method remains. Let’s go back to our `talk_to_myself` method and illustrate each frame:
 
-```
+```rb
 def talk_to_myself(n)
   return if n <= 0.5
 
@@ -62,7 +62,7 @@ You can walk through and visualize this process [here](http://pythontutor.com/vi
 
 Let’s go back to our code example and modify it to return the string ‘done’:
 
-```
+```rb
 def talk_to_myself(n)
   return 'done' if n <= 0.5
 
@@ -86,7 +86,7 @@ Let's illustrate how using stack frames again:
 
 But what if we added a line of code after the recursive call? What would happen then?
 
-```
+```rb
 def talk_to_myself(n)
   return 'done' if n <= 0.5
 
